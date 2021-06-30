@@ -1,0 +1,50 @@
+let playerScore = 0;
+let computerScore = 0;
+
+while(playerScore < 5 || computerScore < 5){
+	playRound();
+  if(playerScore == 5){
+		console.log("player wins game");
+  }
+  if(computerScore == 5){
+		console.log("player loses game");
+  }
+}
+
+
+
+function playRound(playerSelection, computerSelection) {
+	playerSelection = window.prompt("rock paper or scissors", "for ssiscors type 'sis' ");
+	const options = ["rock", "paper", "sis"]
+	computerSelection = options[Math.floor(Math.random() * 3)];
+  console.log(computerSelection);
+  
+	if(computerSelection.toUpperCase() == playerSelection.toUpperCase()){
+  	console.log("tie");
+  }
+  else if(computerSelection.toUpperCase() == "ROCK" && playerSelection.toUpperCase() == "PAPER"){
+  	console.log("player wins");
+    playerScore++;
+  }
+    else if(computerSelection.toUpperCase() == "ROCK" && playerSelection.toUpperCase() == "SIS"){
+  	console.log("player loses");
+    computerScore++;
+  }
+    else if(computerSelection.toUpperCase() == "PAPER" && playerSelection.toUpperCase() == "SIS"){
+  	console.log("player wins");
+    playerScore++;
+  }
+    else if(computerSelection.toUpperCase() == "PAPER" && playerSelection.toUpperCase() == "ROCK"){
+  	console.log("player loses");
+    computerScore++;
+  }
+    else if(computerSelection.toUpperCase() == "SIS" && playerSelection.toUpperCase() == "PAPER"){
+  	console.log("player loses");
+    computerScore++;
+   }
+    else if(computerSelection.toUpperCase() == "SIS" && playerSelection.toUpperCase() == "ROCK"){
+  	console.log("player wins");
+    playerScore++;
+  }
+  
+}
